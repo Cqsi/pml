@@ -1,9 +1,10 @@
 from loadData import loadData
+from computeCost import computeCost
 
-path = "machineLearning\linearRegression\data.txt"
+path = "linearRegression\data.txt"
 
 x = loadData(path)[0]
 y = loadData(path)[1]
 
-
-print(x)
+theta = [0, 1]
+print(computeCost(x, y, theta))
