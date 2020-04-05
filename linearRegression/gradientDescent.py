@@ -14,7 +14,7 @@ def gradient(x, y, theta, alpha, iterations):
         temp0 = theta[0] - (alpha/m)*error0
         temp1 = theta[1] - (alpha/m)*error1
 
-        print(computeCost(x, y, theta))
+        #print(computeCost(x, y, theta))
         theta = [temp0, temp1]
 
     return theta
