@@ -9,10 +9,9 @@ x = loadData(path)[0]
 y = loadData(path)[1]
 
 theta = [0,0]
-alpha = 0.1
+alpha = 0.01
 iterations = 1500
 
 theta = gradient(x, y, theta, alpha, iterations)
 print(theta)
 plot(x,y,theta)
-
