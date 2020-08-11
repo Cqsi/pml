@@ -11,7 +11,7 @@ def abline(slope, intercept):
     y_vals = intercept + slope * x_vals
     plt.plot(x_vals, y_vals, '-')
 
-df = pd.read_csv("cells.csv")
+df = pd.read_csv("data.csv")
 #print(df)
 
 plt.xlabel("time")
