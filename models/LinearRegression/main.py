@@ -3,13 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import linear_model
 
-# Plot line with slope and intercept (don't know why matplotlib doesn't have this function)
-def abline(slope, intercept):
-    """Plot a line from slope and intercept"""
-    axes = plt.gca()
-    x_vals = np.array(axes.get_xlim())
-    y_vals = intercept + slope * x_vals
-    plt.plot(x_vals, y_vals, '-')
+# Split train/test
+from sklearn.model_selection import train_test_split
+
+# matplotlib function
+from line import abline
 
 df = pd.read_csv("data.csv")
 #print(df)
@@ -21,12 +19,16 @@ plt.scatter(df.time, df.cells, color="red", marker="+")
 x_df = df.drop("cells", axis="columns")
 y_df = df.cells
 
+# Split the data set into train/test, test_size in percent
+# X_train, X_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.4, random_state=10)
+
 reg = linear_model.LinearRegression()
 reg.fit(x_df, y_df)
 
 # r2 score
-print(reg.score(x_df, y_df))
+# print(reg.score(x_df, y_df))
+
+# print("Mean squared error between y_test and predicted =", np.mean(prediction_test-y_test)**2)
 
 abline(reg.coef_, reg.intercept_)
-
 plt.show()
