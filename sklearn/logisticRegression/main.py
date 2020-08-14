@@ -56,7 +56,7 @@ X = df.drop(labels = ["Productivity"], axis=1)
 #print(X.head())
 
 # STEP 6: SPLIT THE DATA into TRAIN AND TEST data.
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.4, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.1, random_state=42)
 # By setting random_state equal to a number the split will always be the same, i.e. non-random
 # random_state=None splits dataset randomly every time
 
@@ -77,9 +77,6 @@ print ("Accuracy = ", metrics.accuracy_score(y_test, prediction_test))
 
 # UNDERSTAND WHICH VARIABLES HAVE MOST INFLUENCE ON THE OUTCOME
 # model.coef_ gets the weights of all the variables
-print(model.coef_) 
-
-# But it is not clear which one corresponds to what. 
 # Default index would be 0,1,2,3... but let us overwrite them with column names for X (independent variables)
 weights = pd.Series(model.coef_[0], index=X.columns.values)
 
