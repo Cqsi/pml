@@ -17,3 +17,8 @@ y = y.astype(np.uint8)
 plt.imshow(digit_image, cmap="binary")
 plt.axis("off")
 plt.show()
+
+# split the data into train and test sets
+# this could also be done using sklearn
+X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
+
