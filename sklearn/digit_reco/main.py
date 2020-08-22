@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from sklearn import datasets, svm, metrics
 from sklearn.model_selection import train_test_split
 
+from pred import test
+
 # The digits dataset
 digits = datasets.load_digits()
 
@@ -38,14 +40,16 @@ classifier.fit(X_train, y_train)
 # Now predict the value of the digit on the second half:
 predicted = classifier.predict(X_test)
 
+# Method to show the image and prediction at the same time
+test(100, X_test, predicted)
+
 images_and_predictions = list(zip(digits.images[n_samples // 2:], predicted))
 for ax, (image, prediction) in zip(axes[1, :], images_and_predictions[:4]):
     ax.set_axis_off()
     ax.imshow(image, cmap=plt.cm.gray_r, interpolation='nearest')
     ax.set_title('Prediction: %i' % prediction)
 
-print("Classification report for classifier %s:\n%s\n"
-      % (classifier, metrics.classification_report(y_test, predicted)))
+#print("Classification report for classifier %s:\n%s\n" % (classifier, metrics.classification_report(y_test, predicted)))
 disp = metrics.plot_confusion_matrix(classifier, X_test, y_test)
 disp.figure_.suptitle("Confusion Matrix")
 #print("Confusion matrix:\n%s" % disp.confusion_matrix)
