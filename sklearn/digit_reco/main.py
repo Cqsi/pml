@@ -5,6 +5,8 @@ from sklearn import datasets, svm, metrics
 from sklearn.model_selection import train_test_split
 
 from pred import test
+from pred import add_digit
+
 
 # The digits dataset
 digits = datasets.load_digits()
@@ -41,7 +43,7 @@ classifier.fit(X_train, y_train)
 predicted = classifier.predict(X_test)
 
 # Method to show the image and prediction at the same time
-test(100, X_test, predicted)
+# test(100, X_test, predicted)
 
 images_and_predictions = list(zip(digits.images[n_samples // 2:], predicted))
 for ax, (image, prediction) in zip(axes[1, :], images_and_predictions[:4]):
@@ -55,3 +57,8 @@ disp.figure_.suptitle("Confusion Matrix")
 #print("Confusion matrix:\n%s" % disp.confusion_matrix)
 
 plt.show()
+
+# Add own digit and predict
+a = add_digit("image.png")
+own_digit_pred = classifier.predict(a.flatten().reshape(1, -1))
+print(own_digit_pred)
