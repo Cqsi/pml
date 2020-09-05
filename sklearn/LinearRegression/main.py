@@ -26,7 +26,7 @@ reg = linear_model.LinearRegression()
 reg.fit(x_df, y_df)
 
 # r2 score
-# print(reg.score(x_df, y_df))
+#print(reg.score(x_df, y_df))
 
 # print("Mean squared error between y_test and predicted =", np.mean(prediction_test-y_test)**2)
 
