@@ -20,7 +20,7 @@ print("Number of mislabeled points out of a total %d points : %d" % (X_test.shap
 # https://en.wikipedia.org/wiki/Iris_flower_data_set
 # and take some values from there
 
-pred_test = np.array([6.8,2.8,4.8,1.4])
+pred_test = np.array([6.4, 3.2,	5.3, 2.3])
 
 pred = fit.predict([pred_test])
 print(pred)
