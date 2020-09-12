@@ -1,6 +1,8 @@
 from sklearn.datasets import load_iris
 from sklearn import tree
 
+import numpy as np
+
 from sklearn.model_selection import train_test_split
 
 X, y = load_iris(return_X_y=True)
@@ -12,3 +14,13 @@ fit = clf.fit(X_train, y_train)
 y_pred = fit.predict(X_test)
 
 print("Number of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
+
+
+# Test the prediction with own values below, e.g go to 
+# https://en.wikipedia.org/wiki/Iris_flower_data_set
+# and take some values from there
+
+pred_test = np.array([6.8,2.8,4.8,1.4])
+
+pred = fit.predict([pred_test])
+print(pred)
