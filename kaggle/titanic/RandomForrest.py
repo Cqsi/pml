@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
 
 df = pd.read_csv("train.csv")
 df_test = pd.read_csv("test.csv")
@@ -21,8 +21,8 @@ columns_drop = ["Name", "SibSp", "Parch", "Ticket", "Fare", "Cabin", "Embarked",
 y_train = df.Survived
 X_train = df.drop(columns_drop, axis="columns").drop("Survived", axis="columns")
 
-gnb = GaussianNB()
-fit = gnb.fit(X_train, y_train)
+rfc = RandomForestClassifier(n_estimators=10)
+fit = rfc.fit(X_train, y_train)
 
 X_test = df_test.drop(columns_drop, axis="columns")
 y_pred = fit.predict(X_test)
@@ -32,8 +32,4 @@ y_pred = fit.predict(X_test)
 
 passenger_ids = df_test.PassengerId.values
 
-pd.DataFrame(np.column_stack((passenger_ids, y_pred))).to_csv("file.csv", header=["PassengerId", "Survived"],index=None)
-
-
-# TESTING WITH OWN VALUES
-print(fit.predict([np.array([1, 1, 48])]))
+pd.DataFrame(np.column_stack((passenger_ids, y_pred))).to_csv("file.csv", header=["PassengerId", "Survived"], index=None)
