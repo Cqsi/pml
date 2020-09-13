@@ -21,15 +21,11 @@ columns_drop = ["Name", "SibSp", "Parch", "Ticket", "Fare", "Cabin", "Embarked",
 y_train = df.Survived
 X_train = df.drop(columns_drop, axis="columns").drop("Survived", axis="columns")
 
-print(X_train)
-
 gnb = GaussianNB()
 fit = gnb.fit(X_train, y_train)
 
 X_test = df_test.drop(columns_drop, axis="columns")
 y_pred = fit.predict(X_test)
-
-print(y_pred)
 
 # PREDICTION IS READY
 
@@ -37,3 +33,7 @@ print(y_pred)
 passenger_ids = df_test.PassengerId.values
 
 pd.DataFrame(np.column_stack((passenger_ids, y_pred))).to_csv("file.csv", index=None)
+
+
+# TESTING WITH OWN VALUES
+print(fit.predict([np.array([1, 1, 48])]))
