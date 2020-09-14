@@ -8,8 +8,11 @@ def prepare_data(df, is_train):
 
     # fill the NaN in age column, with the average (30)
     df.Age = df.Age.fillna(30)
+    df.Fare = df.Fare.fillna(0)
+    df["Family"] = df.Parch + df.SibSp
+    df['Is_Alone'] = df.Family == 0
     
-    columns_drop = ["Name", "SibSp", "Parch", "Ticket", "Fare", "Cabin", "Embarked", "PassengerId"]
+    columns_drop = ["Name", "SibSp", "Parch", "Ticket", "Embarked", "Cabin", "PassengerId", "Family"]
 
     if is_train:
 

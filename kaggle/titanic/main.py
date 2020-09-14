@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
-
 from train import train_model
 from prepareData import prepare_data
-
 
 df_test = pd.read_csv("test.csv")
 X_test = prepare_data(df_test, False)
