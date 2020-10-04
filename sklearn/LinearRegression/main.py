@@ -10,7 +10,6 @@ from sklearn.model_selection import train_test_split
 from line import abline
 
 df = pd.read_csv("data.csv")
-#print(df)
 
 plt.xlabel("time")
 plt.ylabel("cells")
@@ -26,7 +25,7 @@ reg = linear_model.LinearRegression()
 reg.fit(x_df, y_df)
 
 # r2 score
-#print(reg.score(x_df, y_df))
+print(reg.score(x_df, y_df))
 
 # print("Mean squared error between y_test and predicted =", np.mean(prediction_test-y_test)**2)
 
