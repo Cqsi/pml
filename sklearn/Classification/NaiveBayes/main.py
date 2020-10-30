@@ -21,4 +21,4 @@ print("Number of mislabeled points out of a total %d points : %d" % (X_test.shap
 pred_test = np.array([6.4, 3.2,	5.3, 2.3])
 
 pred = fit.predict([pred_test])
-print(pred)
+print(pred[0])
