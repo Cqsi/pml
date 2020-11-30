@@ -5,7 +5,6 @@ from sklearn import metrics
 from sklearn.preprocessing import LabelEncoder
 
 import matplotlib.pyplot as plt
-
 import pandas as pd
 
 le = LabelEncoder()
@@ -29,6 +28,7 @@ fit = gnb.fit(X_train, y_train)
 y_pred = gnb.predict(X_test)
 print(metrics.r2_score(y_pred, y_test))
 
+# confusion matrix
 disp = metrics.plot_confusion_matrix(gnb, X_test, y_test)
 disp.figure_.suptitle("Confusion Matrix")
 plt.show()
