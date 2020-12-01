@@ -35,4 +35,4 @@ print(metrics.r2_score(y_pred, y_test))
 #plt.show()
 
 
-print(fit.predict([np.array([4.9, 3.05, 1.41, 0.4])]))
+print("Prediction: " + le.inverse_transform(fit.predict([np.array([4.9, 3.05, 1.41, 0.4])]))[0])
