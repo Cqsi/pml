@@ -34,5 +34,4 @@ print(metrics.r2_score(y_pred, y_test))
 #disp.figure_.suptitle("Confusion Matrix")
 #plt.show()
 
-
-print("Prediction: " + le.inverse_transform(fit.predict([np.array([4.9, 3.05, 1.41, 0.4])]))[0])
+print("Prediction: " + le.inverse_transform(fit.predict([np.array([6, 3.05, 5.0, 1.85])]))[0])
