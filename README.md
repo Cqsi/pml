@@ -1,1 +1,1 @@
-Practical machine learning stuff that I might use later.
+Practical machine learning stuff in Python that I use regularly. Code used mainly Scikit-learn, but in the future it probably will contain a lot of Tensorflow, Pytorch and possibly Keras as well. Kudos to these libraries.
