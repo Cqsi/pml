@@ -1,0 +1,29 @@
+{
+  "name": "textreco",
+  "version": "1.0.0",
+  "description": "* [Javascript OCR app using Tesseract.js](https://www.youtube.com/watch?v=a1I3tcALTlc&t=130s)",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cqsi/photoquizlet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cqsi/photoquizlet/issues"
+  },
+  "homepage": "https://github.com/Cqsi/photoquizlet#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "tesseract.js": "^2.0.0-beta.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
