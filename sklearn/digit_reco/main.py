@@ -11,6 +11,8 @@ from pred import add_digit
 # The digits dataset
 digits = datasets.load_digits()
 
+print(digits.keys())
+
 # The data that we are interested in is made of 8x8 images of digits, let's
 # have a look at the first 4 images, stored in the `images` attribute of the
 # dataset.  If we were working from image files, we could load them using
